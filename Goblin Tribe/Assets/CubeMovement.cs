@@ -1,4 +1,5 @@
 using System;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class CubeMovement : MonoBehaviour
@@ -9,7 +10,9 @@ public class CubeMovement : MonoBehaviour
     private Camera mainCam;
     private int rollCD = 0;
     public GameObject player;
+    public GameObject aim;
     private Rigidbody2D playerRb;
+    Vector2 movement;
 
     void Start()
     {
@@ -18,17 +21,34 @@ public class CubeMovement : MonoBehaviour
 
     void Update()
     {
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                if (rollCD <= 0) { 
-                    Debug.Log("Pressed Spacebar");
-                    rb.totalForce = new Vector2(0, 0);
-                    Vector3 mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition);
-                    Vector2 direction = (mousePos - transform.position).normalized;
-                    rb.AddForce(direction * spaceForce, ForceMode2D.Impulse);
-                    rollCD = 200;
-                }
+        movement.x = Input.GetAxisRaw("Horizontal");
+        movement.y = Input.GetAxisRaw("Vertical");
+
+        Vector3 mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition);
+        Vector3 direction = (mousePos - transform.position).normalized;
+        //Vector3 rotation = (mousePos - aim.transform.position);
+        //float rotZ = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;
+        //aim.transform.rotation = Quaternion.Euler(0, 0, rotZ);
+
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if (rollCD <= 0) 
+            { 
+                Debug.Log("Pressed Spacebar");
+                rb.totalForce = new Vector2(0, 0);
+                rb.AddForce(direction * spaceForce, ForceMode2D.Impulse);
+                rollCD = 200;
             }
+        }
+
+        if (Input.GetKey(KeyCode.Mouse0))
+        {
+            
+            
+        }
+
+        
     }
 
     void FixedUpdate()

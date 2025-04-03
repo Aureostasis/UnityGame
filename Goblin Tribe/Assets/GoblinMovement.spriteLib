@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5e6fedc2472449cead18ef23b5cb30d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Library:
+  - m_Name: downMovement
+    m_Hash: 990912505
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: downMovement0
+      m_Hash: 817988998
+      m_Sprite: {fileID: -6360110322613121548, guid: f46e814be327a354ab2e69986016a443, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -6360110322613121548, guid: f46e814be327a354ab2e69986016a443, type: 3}
+    - m_Name: downMovement1
+      m_Hash: 130462992
+      m_Sprite: {fileID: 1386563969919137866, guid: f46e814be327a354ab2e69986016a443, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 1386563969919137866, guid: f46e814be327a354ab2e69986016a443, type: 3}
+    - m_Name: downMovement2
+      m_Hash: 516940970
+      m_Sprite: {fileID: 2608134154897697519, guid: f46e814be327a354ab2e69986016a443, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 2608134154897697519, guid: f46e814be327a354ab2e69986016a443, type: 3}
+    - m_Name: downMovement3
+      m_Hash: 701027388
+      m_Sprite: {fileID: 1042463876623747289, guid: f46e814be327a354ab2e69986016a443, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 1042463876623747289, guid: f46e814be327a354ab2e69986016a443, type: 3}
+    - m_Name: downMovement4
+      m_Hash: 934035871
+      m_Sprite: {fileID: -4606006083475609183, guid: f46e814be327a354ab2e69986016a443, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -4606006083475609183, guid: f46e814be327a354ab2e69986016a443, type: 3}
+    - m_Name: downMovement5
+      m_Hash: 11235593
+      m_Sprite: {fileID: -566511706981444471, guid: f46e814be327a354ab2e69986016a443, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -566511706981444471, guid: f46e814be327a354ab2e69986016a443, type: 3}
+    - m_Name: downMovement6
+      m_Hash: 430055603
+      m_Sprite: {fileID: -3550293330883345918, guid: f46e814be327a354ab2e69986016a443, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -3550293330883345918, guid: f46e814be327a354ab2e69986016a443, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 7
+  m_PrimaryLibraryGUID: 
+  m_ModificationHash: 638790321301142193
+  m_Version: 1
