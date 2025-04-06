@@ -14,7 +14,7 @@ public class attackRotation : MonoBehaviour
     {
         Vector3 mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition);
         Vector3 rotation = (mousePos - transform.position);
-        float rotZ = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0, 0, rotZ);
+        float rotZ = Mathf.Atan2(rotation.x, rotation.y) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0, 0, -rotZ);
     }
 }
