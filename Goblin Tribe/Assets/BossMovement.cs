@@ -3,8 +3,16 @@ using UnityEngine;
 public class BossMovement : MonoBehaviour
 {
     public Transform Player;
-    public Transform spriteHolder;
     public float moveSpeed = 5f;
+    public Animator animator;
+
+    public int maxHealth = 100;
+    private int currentHealth;
+
+    public float attackCooldown = 2f;
+    [HideInInspector] public float lastAttackTime = -999f;
+
+    [HideInInspector] public bool canMove = true;
 
     private Rigidbody2D rb;
     private Vector2 movement;
@@ -12,35 +20,48 @@ public class BossMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        currentHealth = maxHealth;
     }
 
     void Update()
     {
-        if (Player == null) return;
+        if (Player == null || !canMove) return;
 
-        // Get direction to player
+    
         Vector3 direction = Player.position - transform.position;
         direction.Normalize();
         movement = direction;
 
-        // Flip sprite left/right depending on player's position
-        if (Player.position.x < transform.position.x)
-        {
-            spriteHolder.localScale = new Vector3(-1, 1, 1); // Face left
-        }
-        else
-        {
-            spriteHolder.localScale = new Vector3(1, 1, 1); // Face right
-        }
+   
+        if (movement.x < 0)
+            transform.localScale = new Vector3(-1, 1, 1);
+        else if (movement.x > 0)
+            transform.localScale = new Vector3(1, 1, 1);
+
+       
+        animator.SetFloat("Speed", Mathf.Abs(movement.x) * moveSpeed);
     }
 
     void FixedUpdate()
     {
-        MoveCharacter(movement);
+        if (canMove)
+        {
+            rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+        }
     }
 
-    void MoveCharacter(Vector2 direction)
+    public void TakeDamage(int damage)
     {
-        rb.MovePosition(rb.position + direction * moveSpeed * Time.fixedDeltaTime);
+        currentHealth -= damage;
+
+        if (currentHealth <= 0)
+        {
+            Die();
+        }
+    }
+
+    void Die()
+    {
+        Destroy(gameObject);
     }
 }
