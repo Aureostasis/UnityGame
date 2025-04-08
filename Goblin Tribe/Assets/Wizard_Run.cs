@@ -10,7 +10,12 @@ public class Wizard_Run : StateMachineBehaviour
 
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
+        if (playerObj != null)
+        {
+            player = playerObj.transform;
+        }
+
         rb = animator.GetComponent<Rigidbody2D>();
         boss = animator.GetComponent<BossMovement>();
         boss.canMove = true;
@@ -18,8 +23,15 @@ public class Wizard_Run : StateMachineBehaviour
 
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        if (player == null || boss == null) return;
+        // If the player no longer exists (e.g., they died), go to Idle
+        if (player == null)
+        {
+            boss.canMove = false;
+            animator.SetTrigger("IdleTrigger");
+            return;
+        }
 
+        // If player is within attack range and cooldown is done, attack
         if (Vector2.Distance(player.position, rb.position) <= attackRange &&
             Time.time >= boss.lastAttackTime + boss.attackCooldown)
         {
@@ -31,5 +43,6 @@ public class Wizard_Run : StateMachineBehaviour
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         animator.ResetTrigger("Attack1");
+        animator.ResetTrigger("IdleTrigger"); 
     }
 }
