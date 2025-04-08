@@ -278,6 +278,7 @@ GameObject:
   - component: {fileID: 346792026}
   - component: {fileID: 346792031}
   - component: {fileID: 346792030}
+  - component: {fileID: 346792032}
   m_Layer: 0
   m_Name: Boss1
   m_TagString: Untagged
@@ -377,7 +378,7 @@ Transform:
   m_GameObject: {fileID: 346792025}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7, y: 0, z: 0}
+  m_LocalPosition: {x: -7.2, y: 0.26, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -460,6 +461,24 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &346792032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 346792025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 095e3577e8e44224fa5915e0716bdc24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackDamage: 20
+  attackOffset: {x: 3.5, y: 1, z: 0}
+  attackRange: 3.5
+  attackMask:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1277,7 +1296,7 @@ GameObject:
   - component: {fileID: 1388350194}
   - component: {fileID: 1388350193}
   - component: {fileID: 1388350195}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Goblin
   m_TagString: Player
   m_Icon: {fileID: 0}

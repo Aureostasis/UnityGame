@@ -10,9 +10,9 @@ public class BossMovement : MonoBehaviour
     private int currentHealth;
 
     public float attackCooldown = 2f;
-    [HideInInspector] public float lastAttackTime = -999f;
+    public float lastAttackTime = -999f;
 
-    [HideInInspector] public bool canMove = true;
+    public bool canMove = true;
 
     private Rigidbody2D rb;
     private Vector2 movement;

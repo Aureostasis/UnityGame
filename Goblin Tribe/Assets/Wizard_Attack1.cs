@@ -2,14 +2,23 @@ using UnityEngine;
 
 public class Wizard_Attack : StateMachineBehaviour
 {
-    BossMovement boss;
+    private BossMovement boss;
+    private Rigidbody2D rb;
 
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         boss = animator.GetComponent<BossMovement>();
+        rb = animator.GetComponent<Rigidbody2D>();
+
         if (boss != null)
         {
             boss.canMove = false;
+        }
+
+        if (rb != null)
+        {
+            rb.velocity = Vector2.zero; // Stop any movement
+            rb.bodyType = RigidbodyType2D.Kinematic; // Prevent being pushed
         }
     }
 
@@ -18,6 +27,11 @@ public class Wizard_Attack : StateMachineBehaviour
         if (boss != null)
         {
             boss.canMove = true;
+        }
+
+        if (rb != null)
+        {
+            rb.bodyType = RigidbodyType2D.Dynamic; // Restore normal physics
         }
     }
 }
