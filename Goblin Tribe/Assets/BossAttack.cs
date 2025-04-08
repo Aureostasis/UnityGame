@@ -10,7 +10,10 @@ public class BossWeapon : MonoBehaviour
     public void Attack()
     {
         Vector3 pos = transform.position;
-        pos += transform.right * attackOffset.x;
+
+        // Flip offset if boss is flipped (scale.x < 0)
+        float direction = Mathf.Sign(transform.localScale.x);
+        pos += transform.right * attackOffset.x * direction;
         pos += transform.up * attackOffset.y;
 
         Collider2D colInfo = Physics2D.OverlapCircle(pos, attackRange, attackMask);
@@ -32,7 +35,10 @@ public class BossWeapon : MonoBehaviour
     private void OnDrawGizmosSelected()
     {
         Vector3 pos = transform.position;
-        pos += transform.right * attackOffset.x;
+
+        // Match visualization with runtime logic
+        float direction = Application.isPlaying ? Mathf.Sign(transform.localScale.x) : 1f;
+        pos += transform.right * attackOffset.x * direction;
         pos += transform.up * attackOffset.y;
 
         Gizmos.color = Color.red;
