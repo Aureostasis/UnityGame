@@ -14,6 +14,11 @@ public class CubeMovement : MonoBehaviour
     private Rigidbody2D playerRb;
     Vector2 movement;
 
+
+    // Animation variables
+    public Animator animator;
+    
+
     void Start()
     {
         mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
@@ -29,6 +34,10 @@ public class CubeMovement : MonoBehaviour
         //Vector3 rotation = (mousePos - aim.transform.position);
         //float rotZ = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;
         //aim.transform.rotation = Quaternion.Euler(0, 0, rotZ);
+
+        animator.SetFloat("SpeedX", movement.x);
+        animator.SetFloat("SpeedY", movement.y);
+
 
 
         if (Input.GetKeyDown(KeyCode.Space))
