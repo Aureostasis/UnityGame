@@ -688,7 +688,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -803321122, guid: 836ba81373ddf664c8a192783efe0ecd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1068,7 +1068,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &610034144
 Transform:
   m_ObjectHideFlags: 0
@@ -1127,7 +1127,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_Sprite: {fileID: 8960278200517875464, guid: 55fdf53fdca44504fa378b31d1e74303, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1622,7 +1622,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: -2
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0.125, y: 0.3125, z: 0}
   m_MaxChunkCount: 16
@@ -6827,9 +6827,8 @@ GameObject:
   - component: {fileID: 1388350192}
   - component: {fileID: 1388350191}
   - component: {fileID: 1388350190}
-  - component: {fileID: 1388350194}
   - component: {fileID: 1388350193}
-  - component: {fileID: 1388350195}
+  - component: {fileID: 1388350194}
   m_Layer: 6
   m_Name: Goblin
   m_TagString: Player
@@ -6880,13 +6879,13 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: -6360110322613121548, guid: f46e814be327a354ab2e69986016a443, type: 3}
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 1768679433190182986, guid: 9c43ec790d890a04ab75e315bf56ac7e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.2, y: 0.3}
+  m_Size: {x: 1.25, y: 1.875}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -6989,6 +6988,7 @@ MonoBehaviour:
   spaceForce: 50
   player: {fileID: 1388350187}
   aim: {fileID: 1663552654}
+  animator: {fileID: 1388350193}
 --- !u!95 &1388350193
 Animator:
   serializedVersion: 7
@@ -6999,7 +6999,7 @@ Animator:
   m_GameObject: {fileID: 1388350187}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 187e5a776e6f5b7438207ff693eda293, type: 2}
+  m_Controller: {fileID: 9100000, guid: d801a63727d94d54ead61333f0601692, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -7020,29 +7020,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1388350187}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c29cff538c195c249b69c6f2236de67b, type: 3}
+  m_Script: {fileID: 11500000, guid: c83467a8334791a48a7f6d29cf3559fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Library: []
-  m_SpriteLibraryAsset: {fileID: 7108339969198208228, guid: 5eaab8813dbda82469d563e2037f46e5, type: 3}
---- !u!114 &1388350195
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1388350187}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef683dbd57fb01143994f9aed57b566a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  enemyLayers:
+    serializedVersion: 2
+    m_Bits: 0
   attack1: {fileID: 1902484583}
   attack2: {fileID: 610034143}
   attack3: {fileID: 1623494265}
-  meleeAttack:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &1459806649
 GameObject:
   m_ObjectHideFlags: 0
@@ -7279,7 +7265,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1623494266
 Transform:
   m_ObjectHideFlags: 0
@@ -7338,7 +7324,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_Sprite: {fileID: 5407164698605751720, guid: 73669079f6ac43444a1fb163fd16ad6c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -8057,7 +8043,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1902484584
 Transform:
   m_ObjectHideFlags: 0
@@ -8116,7 +8102,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_Sprite: {fileID: 2598868237486306103, guid: 01ebe78738ea0fe469e56bb61d562a43, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

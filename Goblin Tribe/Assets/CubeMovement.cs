@@ -47,7 +47,7 @@ public class CubeMovement : MonoBehaviour
                 Debug.Log("Pressed Spacebar");
                 rb.totalForce = new Vector2(0, 0);
                 rb.AddForce(direction * spaceForce, ForceMode2D.Impulse);
-                rollCD = 200;
+                rollCD = 100;
             }
         }
 
