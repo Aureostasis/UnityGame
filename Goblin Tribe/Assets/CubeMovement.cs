@@ -81,7 +81,7 @@ public class CubeMovement : MonoBehaviour
     {   
         playerRb = player.GetComponent<Rigidbody2D>();
         var blastDirection = new Vector3(0, 0, 0);
-        blastDirection = (rb.velocity * 5);
+        blastDirection = (rb.linearVelocity * 5);
         blastDirection *= -1;
         Debug.Log("Touched the fireball");
         rb.AddForce(blastDirection, ForceMode2D.Impulse);

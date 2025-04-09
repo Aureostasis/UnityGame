@@ -17,7 +17,7 @@ public class Wizard_Attack : StateMachineBehaviour
 
         if (rb != null)
         {
-            rb.velocity = Vector2.zero; // Stop any movement
+            rb.linearVelocity = Vector2.zero; // Stop any movement
             rb.bodyType = RigidbodyType2D.Kinematic; // Prevent being pushed
         }
     }
