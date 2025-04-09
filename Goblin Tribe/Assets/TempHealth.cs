@@ -31,6 +31,6 @@ public class PlayerHealth : MonoBehaviour
     // Optional: Visualize current health in the Inspector
     private void OnGUI()
     {
-        GUI.Label(new Rect(10, 10, 200, 20), "Health: " + currentHealth);
+        GUI.Label(new Rect(10, 10, 200, 20), "Player Health: " + currentHealth);
     }
 }

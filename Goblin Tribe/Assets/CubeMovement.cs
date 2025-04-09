@@ -1,5 +1,4 @@
 using System;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class CubeMovement : MonoBehaviour
@@ -31,9 +30,6 @@ public class CubeMovement : MonoBehaviour
 
         Vector3 mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition);
         Vector3 direction = (mousePos - transform.position).normalized;
-        //Vector3 rotation = (mousePos - aim.transform.position);
-        //float rotZ = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;
-        //aim.transform.rotation = Quaternion.Euler(0, 0, rotZ);
 
         animator.SetFloat("SpeedX", movement.x);
         animator.SetFloat("SpeedY", movement.y);
@@ -50,16 +46,7 @@ public class CubeMovement : MonoBehaviour
                 rollCD = 100;
             }
         }
-
-        if (Input.GetKey(KeyCode.Mouse0))
-        {
-            
-            
-        }
-
-        
     }
-
     void FixedUpdate()
     {
         rollCD -= 1;
